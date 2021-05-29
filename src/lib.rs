@@ -1,7 +1,14 @@
+mod core;
+
 #[cfg(test)]
 mod tests {
+    use crate::core::global_chain::BLOCK_CHAIN;
+    use crate::core::chain::Chain;
+
+
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn chain_test1(){
+        let ref mut chain = (*BLOCK_CHAIN).lock().unwrap();
+        println!("{:?}",chain);
     }
 }
